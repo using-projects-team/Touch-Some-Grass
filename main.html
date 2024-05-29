@@ -30,34 +30,21 @@
 <body>
     <div id="map"></div>
     <input id="autocomplete" placeholder="Enter a city" type="text"/>
-    <script>
-        let autocomplete;
-        function initAutocomplete() {
-            autocomplete = new google.maps.places.Autocomplete(
-                document.getElementById('autocomplete'),
-                {
-                    types: ['(cities)'],
-                    componentRestrictions: {'country': ['US']},
-                    fields: ['place_id', 'geometry', 'name']
-
-                }
-            );
-            autocomplete.addListener('place_changed', placeChanged);
-        }
-        function placeChanged() {
-            var place = autocomplete.getPlace();
-
-            if (!place.geometry) {
-                document.getElementById('autocomplete').placeholder =
-                'Enter a City';
-            } else {
-                document.getElementById('details').innerHTML = place.name;
-            }
-        }
-    </script>
+    
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
 
 
     
 </body>
+<footer class="footer">
+    <h2>Contributors and Links</h2>
+    <ul class="list">
+        <li><h3>Rylan C</h3> <a href="https://github.com/RCMeatball" target="_blank">Github</a> - <a href="https://www.instagram.com/rcmeatball/" target="_blank">Instagram</a></li>
+        <li><h3>Dylan S</h3> <a href="https://github.com/Dylan2899" target="_blank">Github</a></li>
+        <li><h3>Ernesto G</h3> <a href="https://github.com/ErnestoAG" target="_blank">Github</a></li>
+        <li><h3>Kenneth H</h3> <a href="https://github.com/kenneth-hass" target="_blank">Github</a></li>
+        <li><h3>Masoud A</h3> <a href="https://github.com/masoudwebdeveloper" target="_blank">Github</a></li>
+        <li><h4>Github Repository:</h4> <a href="https://github.com/using-projects-team/Touch-Some-Grass" target="_blank">Click Here</a></li>
+    </ul>
+</footer>
 </html>

@@ -50,3 +50,24 @@ head {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .footer {
+    position: absolute;
+    bottom: 0; 
+    left: 0;
+    z-index: 10;
+    border-style: dashed;
+    width: 90%;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  h2 {
+    color: blueviolet;
+    font-style: italic;
+    text-decoration: underline ;
+  }
