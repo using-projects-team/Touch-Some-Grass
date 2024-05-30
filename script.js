@@ -1,5 +1,6 @@
 let autocomplete;
 var button = document.getElementById("Check");
+var favLocation = "";
 // Rylan Maps API code [begins]
 function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(
@@ -39,7 +40,7 @@ function populateArray() {
     }
     return places;
 }
-// This function creates a list of selectable places.
+// This function populates a list with strings of selectable places.
 function createList() {
     let places = populateArray();
     for (let i = 0; i < 5; i++) {
@@ -63,5 +64,23 @@ function createTable() {
                 document.getElementById(I+J) = weather[j].sel;
             }
         }
+    }
+}
+// This function stores the preferred place selected by the user in local storage
+function storePlace() {
+    var goThere = {location: getPlace(), name: favLocation};
+    if (localStorage.getItem('My Place') !== null) {
+        localStorage.removeItem('My Place');
+    }
+    localStorage.setItem('My Place', JSON.stringify(goThere));
+}
+// This function retrieves saved preferred location if it exists
+function retrievePlace() {
+    var myPlace;
+    if (localStorage.getItem('My Place') !== null) {
+        myPlace = localStorage.getItem('My Place');
+        return myPlace;
+    } else {
+        return null;
     }
 }
