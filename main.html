@@ -14,49 +14,56 @@
   <title>Touch Some Grass!</title>
   
 </head>
+<header>
+    <div class="container">
+      <img class ="banner" src="./images/clearsky.jpg" alt="CLear Sky in a Field">
+      <div class="bottom-left"></div>
+      <div class="top-left"></div>
+      <div class="top-right"></div>
+      <div class="bottom-right"></div>
+      <div class="centered">Touch Some Grass!</div>
+    </div>
+</header>
 
 <body>
+<div class="container2">
+    <header>
+        <h1>Weather Location Searcher</h1>
+    </header>
+    <main>
+        <form class="search-form">
+            <input type="text" placeholder="Enter location" id="location-input">
+            <button type="submit">Search</button>
+        </form>
+        <div class="profile">
+            <img src="profile-pic-placeholder.png" alt="Profile Picture" class="profile-pic">
+            <input type="file" id="upload-profile-pic" style="display: none;">
+            <label for="upload-profile-pic" class="upload-button">Upload Profile Picture</label>
+        </div>
+        <div class="settings">
+            <button class="save-settings">Save Settings</button>
+            <button class="attach-files">Attach Files</button>
+        </div>
+   
+</div>
+
     <div id="map"></div>
-    <script>
-        function initMap() {
-            let orlando = {lat:28.5384, lng:-81.3789};
-            let map = new google.maps.Map(
-                document.getElementById('map'), {zoom:8, center: orlando})
-            ;
-            let marker = new google.maps.Marker({position: orlando, map: map});
-            
-            initAutocomplete()
-        }
-    </script>
     <input id="autocomplete" placeholder="Enter a city" type="text"/>
-    <script>
-        let autocomplete;
-        function initAutocomplete() {
-            autocomplete = new google.maps.places.Autocomplete(
-                document.getElementById('autocomplete'),
-                {
-                    types: ['(cities)'],
-                    componentRestrictions: {'country': ['US']},
-                    fields: ['place_id', 'geometry', 'name']
-
-                }
-            );
-            autocomplete.addListener('place_changed', placeChanged);
-        }
-        function placeChanged() {
-            var place = autocomplete.getPlace();
-
-            if (!place.geometry) {
-                document.getElementById('autocomplete').placeholder =
-                'Enter a City';
-            } else {
-                document.getElementById('details').innerHTML = place.name;
-            }
-        }
-    </script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
-
-
     
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
+</main>
 </body>
+
+<footer class="footer">
+    <h2>Contributors and Links</h2>
+    <ul class="list">
+        <li><h3>Rylan C</h3> <a href="https://github.com/RCMeatball" target="_blank">Github</a> - <a href="https://www.instagram.com/rcmeatball/" target="_blank">Instagram</a></li>
+        <li><h3>Dylan S</h3> <a href="https://github.com/Dylan2899" target="_blank">Github</a></li>
+        <li><h3>Ernesto G</h3> <a href="https://github.com/ErnestoAG" target="_blank">Github</a></li>
+        <li><h3>Kenneth H</h3> <a href="https://github.com/kenneth-hass" target="_blank">Github</a></li>
+        <li><h3>Masoud A</h3> <a href="https://github.com/masoudwebdeveloper" target="_blank">Github</a></li>
+        <li><h4>Github Repository:</h4> <a href="https://github.com/using-projects-team/Touch-Some-Grass" target="_blank">Click Here</a></li>
+    </ul>
+</footer>
+
 </html>
