@@ -1,6 +1,10 @@
 let map, infoWindow;
 let autocomplete;
 
+
+
+const pos = []
+
 function initMap() {
     let orlando = {lat:28.5384, lng:-81.3789};
     let map = new google.maps.Map(
@@ -11,11 +15,11 @@ function initMap() {
     initAutocomplete()
 infoWindow = new google.maps.InfoWindow();
 
-  const locationButton = document.createElement("button");
+
+  const locationButton = document.getElementById("locationButton");
 
   locationButton.textContent = "Go to Current Location";
   locationButton.classList.add("custom-map-control-button");
-  map.controls[google.maps.ControlPosition.TOP_CENTER].push(locationButton);
   locationButton.addEventListener("click", () => {
     
     if (navigator.geolocation) {
@@ -25,6 +29,10 @@ infoWindow = new google.maps.InfoWindow();
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           };
+
+
+          console.log(pos)
+
 
           infoWindow.setPosition(pos);
           infoWindow.setContent("You are here.");
@@ -41,6 +49,10 @@ infoWindow = new google.maps.InfoWindow();
     }
   });
 }
+
+
+console.log(pos)
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
