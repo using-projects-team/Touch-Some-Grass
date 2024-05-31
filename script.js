@@ -10,10 +10,10 @@ function initMap() {
     let map = new google.maps.Map(
         document.getElementById('map'), {zoom:10, center: orlando})
     ;
-    let marker = new google.maps.Marker({position: orlando, map: map});
     
     initAutocomplete()
-infoWindow = new google.maps.InfoWindow();
+
+    infoWindow = new google.maps.InfoWindow();
 
 
   const locationButton = document.getElementById("locationButton");
