@@ -1,6 +1,10 @@
 let map, infoWindow;
 let autocomplete;
+
+
+
 const pos = []
+
 function initMap() {
     let orlando = {lat:28.5384, lng:-81.3789};
     let map = new google.maps.Map(
@@ -10,6 +14,7 @@ function initMap() {
     initAutocomplete()
 
     infoWindow = new google.maps.InfoWindow();
+
 
   const locationButton = document.getElementById("locationButton");
 
@@ -25,7 +30,9 @@ function initMap() {
             lng: position.coords.longitude,
           };
 
+
           console.log(pos)
+
 
           infoWindow.setPosition(pos);
           infoWindow.setContent("You are here.");
@@ -44,8 +51,8 @@ function initMap() {
 }
 
 
-
 console.log(pos)
+
 
 function handleLocationError(browserHasGeolocation, infoWindow, pos) {
   infoWindow.setPosition(pos);
