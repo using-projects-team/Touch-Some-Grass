@@ -15,6 +15,45 @@ const searchButton = document.querySelector('button');
 const weatherContainer = document.getElementById('weather');
 const currentLocation = document.getElementById('location');
 const forecastContainer = document.getElementById('forecast');
+const modalBox = document.getElementById('exampleModal');
+const taskForm = document.getElementById('formGroup');
+const closeButton = document.getElementById('closeBtn');
+
+closeButton.addEventListener('click', function () {
+    taskForm.setAttribute('style', 'visibility: hidden;')
+});
+
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) { slideIndex = 1 }
+    if (n < 1) { slideIndex = slides.length }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+}
+
 
 const getCurrentWeatherByName = async (city) => {
     const url = `${BASE_URL}/weather?q=${city}&appid=${API_KEY}`;
@@ -58,6 +97,25 @@ const renderCurrentWeather = (data) => {
         </div>
     `;
     weatherContainer.innerHTML = weatherJSx;
+    if (data.weather[0].main === 'Clear') {
+        let promptValue = prompt('Greate News! Weather is good today. Can I offer you some good places to go? please say YES/NO', 'YES/NO')
+        let timesRun = 0;
+        if (promptValue !== null && promptValue === 'YES' || promptValue === 'yes') {
+
+            var interval = setInterval(function () {
+                taskForm.setAttribute('style', 'visibility: visible;')
+                timesRun += 1;
+                if (timesRun === 2) {
+                    clearInterval(interval);
+                }
+                console.log(timesRun)
+            }, 2000);
+
+        }
+    } else {
+        alert('Sorry! weather is not good today.')
+    }
+
 }
 
 const getWeekDay = (date) => {
@@ -77,6 +135,7 @@ const renderForecastWeather = (data) => {
         </div>
         `;
         forecastContainer.innerHTML += foreCastJSx;
+
     })
 }
 
