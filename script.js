@@ -10,7 +10,6 @@ function initMap() {
     locationButton.textContent = "Go to Current Location";
     locationButton.classList.add("custom-map-control-button");
     locationButton.addEventListener("click", () => {
-    
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
           (position) => {
@@ -18,17 +17,17 @@ function initMap() {
               lat: position.coords.latitude,
               lng: position.coords.longitude,
             };
-  
-  
-            console.log(pos)
             //Geolocation by name
             var geoposition = new google.maps.Geocoder;
             function geoLocation(coordinates) {
-              geoposition.geocode({'location': coordinates}, function(results, status) {
+              geoposition.geocode({'location': coordinates}, function(data, status) {
                 if (status === 'OK') {
-                  if (results[0]) {
-                    document.getElementById("address").textContent = results[0].formatted_address;
+                  if (data[0]) {
+                    console.log(data[0].formatted_address);
+                    console.log(data[0].address_components);
+                    document.getElementById("address").textContent = data[0].formatted_address;
                     document.getElementById("nextButton").removeAttribute("disabled");
+                    document.getElementById("nextButton").classList.add("active");
                   } else {
                     document.getElementById("address").textContent = 'No results found';
                   }
@@ -60,7 +59,7 @@ function initMap() {
                   localStorage.setItem(type[j], JSON.stringify(store));
                 }
               });
-            }
+            };
             
             infoWindow.setPosition(pos);
             infoWindow.setContent("You are here.");
