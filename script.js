@@ -1,7 +1,7 @@
 let map, infoWindow;
 let autocomplete;
 const pos = []
-
+const type = ['park', 'amusement_park', 'tourist_attraction', 'campground', 'gym'];
 function initMap() {
     let orlando = {lat:28.5384, lng:-81.3789};
     let map = new google.maps.Map(document.getElementById('map'), {zoom:10, center: orlando}); 
@@ -38,30 +38,30 @@ function initMap() {
               });
             }
             geoLocation(pos);
-            //end of geolocation function
-            //Find places nearby API, TODO: It is not going to work until we get a valid key
-            fetch('https://places.googleapis.com/v1/places:searchNearby', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'X-Goog-Api-Key': 'AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY',
-                'X-Goog-FieldMask': 'places.displayName'
-              },
-              body: JSON.stringify({
-                'includedTypes': ['historical_landmark', 'park', 'national_park', 'tourist_attraction', 'hiking_area'],
-                'maxResultCount': 1,
-                'rankPreference': 'DISTANCE',
-                'locationRestriction': {
-                  'circle': {
-                    'center': {
-                      'latitude': pos.lat,
-                      'longitude': pos.lng
-                    },
-                    'radius': 3000
+            //places API
+            var places = new google.maps.places.PlacesService(map);
+            var call = {
+              location: new google.maps.LatLng(pos.lat, pos.lng),
+              radius: 5000,
+              types: []
+            };
+            for (let j = 0; j < 5; j++) {
+              call.types = Object.assign([type[j]]);
+              places.search(call, function(results) {
+                if (results[0]){
+                  var store = [];
+                  for (let i = 0; i < results.length; i++){
+                    store.push(results[i].name);
                   }
+                  localStorage.setItem(type[j], JSON.stringify(store));
+                } else {
+                  var store = [];
+                  store.push(`No ${type[j]}s found`);
+                  localStorage.setItem(type[j], JSON.stringify(store));
                 }
-              })
-            });
+              });
+            }
+            
             infoWindow.setPosition(pos);
             infoWindow.setContent("You are here.");
             infoWindow.open(map);
