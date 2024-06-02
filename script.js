@@ -6,7 +6,7 @@ var service
 function initMap() {
   let orlando = { lat: 28.5384, lng: -81.3789 };
   let map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 15, center: orlando })
+    document.getElementById('map'), { zoom: 10, center: orlando })
     ;
 
   var input = document.getElementById('search');
@@ -29,7 +29,7 @@ function initMap() {
       map.fitBounds(place.geometry.viewport)
     } else {
       map.setCenter(place.geometry.location)
-      map.setZoom(16)
+      map.setZoom(17)
     }
     marker.setPosition(place.geometry.location)
     marker.setVisible(true)
