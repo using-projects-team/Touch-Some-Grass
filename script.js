@@ -4,134 +4,76 @@ let autocomplete;
 const pos = []
 const type = ['park', 'amusement_park', 'tourist_attraction', 'campground', 'gym'];
 function initMap() {
-  let orlando = { lat: 28.5384, lng: -81.3789 };
-  let map = new google.maps.Map(document.getElementById('map'), { zoom: 10, center: orlando });
-  infoWindow = new google.maps.InfoWindow();
-  const locationButton = document.getElementById("locationButton");
-  locationButton.textContent = "Go to Current Location";
-  locationButton.classList.add("custom-map-control-button");
-  locationButton.addEventListener("click", () => {
+    let orlando = {lat:28.5384, lng:-81.3789};
+    let map = new google.maps.Map(document.getElementById('map'), {zoom:10, center: orlando}); 
+    infoWindow = new google.maps.InfoWindow();
+    const locationButton = document.getElementById("locationButton");
+    locationButton.textContent = "Go to Current Location";
+    locationButton.classList.add("custom-map-control-button");
+    locationButton.addEventListener("click", () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude,
+            };
+            //Geolocation by name
+            var geoposition = new google.maps.Geocoder;
+            function geoLocation(coordinates) {
+              geoposition.geocode({'location': coordinates}, function(data, status) {
+                if (status === 'OK') {
+                  if (data[0]) {
+                    console.log(data);
+                    document.getElementById("address").textContent = data[0].formatted_address;
+                    document.getElementById("nextButton").removeAttribute("disabled");
+                    document.getElementById("nextButton").classList.toggle("active");
+                  } else {
+                    document.getElementById("address").textContent = 'No results found';
+                  }
 
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        (position) => {
-          const pos = {
-            lat: position.coords.latitude,
-            lng: position.coords.longitude,
-          };
-
-
-          console.log(pos)
-          //Geolocation by name
-          var geoposition = new google.maps.Geocoder;
-          function geoLocation(coordinates) {
-            geoposition.geocode({ 'location': coordinates }, function (results, status) {
-              if (status === 'OK') {
-                if (results[0]) {
-                  document.getElementById("address").textContent = results[0].formatted_address;
-                  document.getElementById("nextButton").removeAttribute("disabled");
                 } else {
                   document.getElementById("address").textContent = 'No results found';
                 }
-              } else {
-                document.getElementById("address").textContent = 'Error detected';
-              }
-            });
-          }
-          geoLocation(pos);
-          //places API
-          var places = new google.maps.places.PlacesService(map);
-          var call = {
-            location: new google.maps.LatLng(pos.lat, pos.lng),
-            radius: 5000,
-            types: []
-          };
-          for (let j = 0; j < 5; j++) {
-            call.types = Object.assign([type[j]]);
-            places.search(call, function (results) {
-              if (results[0]) {
-                var store = [];
-                for (let i = 0; i < results.length; i++) {
-                  store.push(results[i].name);
+              });
+            }
+            geoLocation(pos);
+            //places API
+            var places = new google.maps.places.PlacesService(map);
+            var call = {
+              location: new google.maps.LatLng(pos.lat, pos.lng),
+              radius: 5000,
+              types: []
+            };
+            for (let j = 0; j < 5; j++) {
+              call.types = Object.assign([type[j]]);
+              places.search(call, function(results) {
+                if (results[0]){
+                  var store = [];
+                  for (let i = 0; i < results.length; i++){
+                    store.push(results[i]);
+                  }
+                  localStorage.setItem(type[j], JSON.stringify(store));
+                } else {
+                  var store = [];
+                  store.push(`No ${type[j]}s found`);
+                  localStorage.setItem(type[j], JSON.stringify(store));
                 }
-                localStorage.setItem(type[j], JSON.stringify(store));
-              } else {
-                var store = [];
-                store.push(`No ${type[j]}s found`);
-                localStorage.setItem(type[j], JSON.stringify(store));
-              }
-            });
-          }
+              });
+            };
+            
+            infoWindow.setPosition(pos);
+            infoWindow.setContent("You are here.");
+            infoWindow.open(map);
+            map.setCenter(pos);
+          },
+          () => {
+            handleLocationError(true, infoWindow, map.getCenter());
+          },
+        );
+      } else {
+        handleLocationError(false, infoWindow, map.getCenter());
 
-          infoWindow.setPosition(pos);
-          infoWindow.setContent("You are here.");
-          infoWindow.open(map);
-          map.setCenter(pos);
-        },
-        () => {
-          handleLocationError(true, infoWindow, map.getCenter());
-        },
-      );
-    } else {
-      handleLocationError(false, infoWindow, map.getCenter());
-    }
-  });
-}
-
-
-
-var position = {};
-var service
-
-function initMap() {
-  let orlando = { lat: 28.5384, lng: -81.3789 };
-  let map = new google.maps.Map(
-    document.getElementById('map'), { zoom: 10, center: orlando })
-    ;
-
-  var input = document.getElementById('search');
-
-  let autocomplete = new google.maps.places.Autocomplete(input)
-
-  autocomplete.bindTo('bounds', map)
-
-  let marker = new google.maps.Marker({
-    map: map
-  })
-
-  google.maps.event.addListener(autocomplete, 'place_changed', () => {
-    var place = autocomplete.getPlace()
-    console.log(place)
-    console.log(place.photos[0].getUrl())
-
-
-    if (place.geometry.viewport) {
-      map.fitBounds(place.geometry.viewport)
-    } else {
-      map.setCenter(place.geometry.location)
-      map.setZoom(17)
-    }
-    marker.setPosition(place.geometry.location)
-    marker.setVisible(true)
-
-    let request = {
-      location: place.geometry.location,
-      type: ['park', 'national_park', 'aquarium', 'hiking_area', 'zoo', 'historical_landmark', 'dog_park'],
-      radius: 8050
-    }
-
-
-
-    service = new google.maps.places.PlacesService(map);
-    service.nearbySearch(request, callback);
-
-
-    function callback(results, status) {
-      if (status == google.maps.places.PlacesServiceStatus.OK) {
-        for (var i = 0; i < results.length; i++) {
-          var place = results[i];
-          createMarker(results[i]);
-        }
       }
 
 

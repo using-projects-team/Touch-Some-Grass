@@ -2,13 +2,14 @@
 <html lang="en">
 
 <head>
-  <style>
-    #map {
-      width: 25%;
-      height: 400px;
-      background-color: grey;
-    }
-  </style>
+    <style>
+        #map {
+            width: 25%;
+            height: 400px;
+            background: none;
+        }
+    </style>
+
   <meta charset="UTF-8" />
   <link rel="stylesheet" type="text/css" href="./style.css" />
   <script src="./script.js"></script>
@@ -32,23 +33,15 @@
     
    
 
-
+</div>-->
+    <div class="address">You are here: <div id="address">*search location*</div></div>
     <div id="map"></div>
-    <input class="bar" id="search" type="text" style="height: 45px; width: 350px;" />
-    <button class='current' id="locationButton" type="button">Go to Current Location</button>
-
-
-
-    
-
-    <script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
-
-    <button class="next" onclick="window.location.href = 'http:/index.html';">Next</button>
-
-    </main>
-  </body>
-</div>
+    <br></br>
+    <button id="locationButton" type="button"></button>
+    <a href="index.html"><button id="nextButton" class="inactive" class="active" type="button" disabled>Next</button></a>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
+</main>
+</body>
 
 <footer class="footer">
   <h2>Contributors and Links</h2>

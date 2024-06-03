@@ -17,56 +17,112 @@ body {
     text-align: center;
 }
 
+#go {       
+  width: 100px;  
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20x;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+#go:hover {       
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #4d0de5;
+  color: #ffffff;
+}
+
+#back {       
+    width: 100px;  
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20x;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  
+  #back:hover {       
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #4d0de5;
+    color: #ffffff;
+  }
+
+
 header h1 {
     margin: 0;
     font-size: 1.5em;
     color: #333;
 }
 
-.search-form {
-    margin: 20px 0;
+
+header h2 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+#opt {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    margin-left: 110px;
     display: flex;
-    justify-content: space-between;
+    align-self: center;
+    justify-content: center;
 }
 
-.search-form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: calc(100% - 90px);
+#sel {
+    width: 100px;  
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20x;
+    font-weight: bold;
+    margin-bottom: 10%; 
 }
 
-.search-form button {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    width: 80px;
+#sel:hover {       
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #4d0de5;
+  color: #ffffff;
 }
 
-.search-form button:hover {
-    background-color: #0056b3;
+#ch {
+  width: auto; 
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20x;
+  font-weight: bold;
+  margin-bottom: 10%; 
 }
+
+#ch:hover {       
+cursor: pointer;
+border: 1px solid #ffffff;
+border-radius: 10px;
+background-color: #4d0de5;
+color: #ffffff;
+}
+
+.info {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  font-size:20px;
+}
+
+
 
 .map {
     height: 300px;
     width: 100%;
     margin: 20px 0;
-}
-
-.go-button {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.go-button:hover {
-    background-color: #218838;
 }
