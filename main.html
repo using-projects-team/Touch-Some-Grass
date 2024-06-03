@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" type="text/css" href="./style.css" />
-  <title>Touch Some Grass!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Location Searcher</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
- <h1>This is a test</h1>   
-    
-    <script src="./script.js"></script>
+    <div class="container">
+        <header>
+            <h1>Weather Location Searcher</h1>
+        </header>
+        <main>
+            <form class="search-form">
+                <input type="text" placeholder="Enter location" id="location-input">
+                <button type="submit">Search</button>
+            </form>
+            <div class="profile">
+                <img src="profile-pic-placeholder.png" alt="Profile Picture" class="profile-pic">
+                <input type="file" id="upload-profile-pic" style="display: none;">
+                <label for="upload-profile-pic" class="upload-button">Upload Profile Picture</label>
+            </div>
+            <div class="settings">
+                <button class="save-settings">Save Settings</button>
+                <button class="attach-files">Attach Files</button>
+            </div>
+        </main>
+    </div>
 </body>
+</html>
