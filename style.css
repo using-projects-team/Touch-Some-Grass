@@ -178,8 +178,7 @@ header h1 {
 
 #map {
   display: absolute;
-  top: 1000px;
-  left: 300px;
+  right: 50px;
   transform: translate(150%, 10%);
 }
 
