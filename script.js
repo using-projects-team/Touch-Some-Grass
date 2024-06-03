@@ -49,7 +49,7 @@ function initMap() {
                 if (results[0]){
                   var store = [];
                   for (let i = 0; i < results.length; i++){
-                    store.push(results[i].name);
+                    store.push(results[i]);
                   }
                   localStorage.setItem(type[j], JSON.stringify(store));
                 } else {
