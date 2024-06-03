@@ -53,11 +53,13 @@ body {
     color: #ffffff;
   }
 
+
 header h1 {
     margin: 0;
     font-size: 1.5em;
     color: #333;
 }
+
 
 header h2 {
     margin-top: 10px;
@@ -117,32 +119,7 @@ color: #ffffff;
   font-size:20px;
 }
 
-/* .search-form {
-    margin: 20px 0;
-    display: flex;
-    justify-content: space-between;
-}
 
-.search-form input {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    width: calc(100% - 90px);
-}
-
-.search-form button {
-    padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    cursor: pointer;
-    width: 80px;
-}
-
-.search-form button:hover {
-    background-color: #0056b3;
-} */
 
 .map {
     height: 300px;
