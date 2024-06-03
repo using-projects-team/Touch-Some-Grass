@@ -289,3 +289,15 @@ body{
   to {opacity: 1}
 }
 
+#back {
+  width: 150px;
+  height: 50px;
+  border: 5px solid rgb(34, 172, 34);
+  color: rgb(31, 189, 31);
+  background-color: rgb(188, 89, 218);
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 20%;
+  margin-left: 80%;
+}
