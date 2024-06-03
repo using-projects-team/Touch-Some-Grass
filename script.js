@@ -23,11 +23,9 @@ function initMap() {
               geoposition.geocode({'location': coordinates}, function(data, status) {
                 if (status === 'OK') {
                   if (data[0]) {
-                    console.log(data[0].formatted_address);
-                    console.log(data[0].address_components);
                     document.getElementById("address").textContent = data[0].formatted_address;
                     document.getElementById("nextButton").removeAttribute("disabled");
-                    document.getElementById("nextButton").classList.add("active");
+                    document.getElementById("nextButton").classList.toggle("active");
                   } else {
                     document.getElementById("address").textContent = 'No results found';
                   }

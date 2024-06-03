@@ -208,6 +208,21 @@ header h1 {
   width: 200px;
   height: 80px;
   border: 5px solid cyan;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10%;
+  margin-left: 43%;
+}
+
+.inactive {
+ 
+}
+
+.active {
+  width: 200px;
+  height: 80px;
+  border: 5px solid cyan;
   color: cyan;
   background-color: magenta;
   border-radius: 10px;
