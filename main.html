@@ -14,6 +14,7 @@
   <script src="./script.js"></script>
   <title>Touch Some Grass!</title>
 </head>
+
 <header>
     <div class="container">
       <img class ="banner" src="./images/clearsky.jpg" alt="CLear Sky in a Field">
@@ -27,7 +28,8 @@
 
 <div class="background">
 <body>
-<div class="container2">
+<!-- Scrapped idea that never worked -->
+<!-- <div class="container2"> 
     <header>
         <h1>Weather Location Searcher</h1>
     </header>
@@ -46,14 +48,15 @@
             <button class="attach-files">Attach Files</button>
         </div>
    
-</div>
 
-
+</div>-->
     <div id="map"></div>
     <input class="bar" id="search" type="text" style="height: 45px; width: 350px;"/>
     <button class='current' id="locationButton" type="button">Go to Current Location</button>
+    
 
-    <!-- -d ' {
+
+      <!-- -d ' {
         "includedTypes": ["restaurant"],
         "maxResultCount": 10,
         "locationRestriction": {
@@ -69,14 +72,13 @@
       -H "X-Goog-FieldMask: places.displayName" \
       https://places.googleapis.com/v1/places:searchNearby -->
     
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
+      <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
 
-    <button class="next" onclick="window.location.href = 'http:/index.html';">Next</button>
+      <button class="next" onclick="window.location.href = 'http:/index.html';">Next</button>
 
   </main>
 </body>
 </div>
-
 
 <footer class="footer">
     <h2>Contributors and Links</h2>
