@@ -1,7 +1,8 @@
+
+
 head {
     text-align: center;
     text-wrap: wrap;
-
     padding-bottom: 70%;
 }
 
@@ -14,14 +15,12 @@ header {
     position: relative;
     text-align: center;
     color: white;
-
     border-color: rgb(34, 172, 34);
     border-width: 50%;
     border-style: solid;
     max-height: 2%;
     width: 1343px;
     height: 200px;
-    margin-bottom: 4%;
   }
  
   .bottom-left {
@@ -76,7 +75,12 @@ header {
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
+  .background {
+    background-color: #007BFF;
+  }
+
 body {
+   display: inline-block;
     font-family: Arial, sans-serif;
     background-color: #F0F0F0;
     margin: 0;
@@ -85,7 +89,14 @@ body {
     align-items: center;
     height: 100vh;
 }
+
 .container2 {
+  z-index: 0;
+    display: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(50%, 10%);
+
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -164,12 +175,45 @@ header h1 {
     background-color: #218838;
 }
 
-.map {
-    display: inline-block;
+.bar {
+  display: absolute;
+  margin-left: 20%;
+  top: 5%;
+  left: 50%;
+  transform: (10%, -30%);
+  cursor: pointer;
 }
 
+#map {
+  z-index: 1;
+  display: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(55%, -85%);
+  margin-bottom: -20%;
+}
 
+.current {
+  display: relative;
+  top: 10%;
+  left: 50%;
+  transform: translate(40%, -95%);
+  margin-left: 55%;
+  height: 50px;
+  width: 200px;
+}
 
+.next {
+  margin-left: 80%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  border: solid;
+  background-color: #28A745;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+
+}
   
 
   .footer {
@@ -177,7 +221,8 @@ header h1 {
     left: 0;
     z-index: 10;
     border-style: dashed;
-    width: 90%;
+    width: 100%;
+    background-color: gray;
   }
 
   .list {

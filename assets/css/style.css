@@ -250,3 +250,14 @@ body{
   to {opacity: 1}
 }
 
+.previous {
+  margin-left: 80%;
+  margin-bottom: 30%;
+  border-radius: 5px;
+  border: solid;
+  background-color: #28A745;
+  color: black;
+  cursor: pointer;
+  font-size: 30px;
+
+}

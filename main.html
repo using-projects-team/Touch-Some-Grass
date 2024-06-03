@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">   
   
-
 <head>
     <style>
         #map {
@@ -26,6 +25,7 @@
     </div>
 </header>
 
+<div class="background">
 <body>
 <div class="container2">
     <header>
@@ -48,9 +48,10 @@
    
 </div>
 
-<input id="search" type="text" size="50"/>
+
     <div id="map"></div>
-    <button id="locationButton" type="button"></button>
+    <input class="bar" id="search" type="text" style="height: 45px; width: 350px;"/>
+    <button class='current' id="locationButton" type="button">Go to Current Location</button>
 
     <!-- -d ' {
         "includedTypes": ["restaurant"],
@@ -69,8 +70,13 @@
       https://places.googleapis.com/v1/places:searchNearby -->
     
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
-</main>
+
+    <button class="next" onclick="window.location.href = 'http:/index.html';">Next</button>
+
+  </main>
 </body>
+</div>
+
 
 <footer class="footer">
     <h2>Contributors and Links</h2>
