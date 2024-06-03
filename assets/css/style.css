@@ -52,6 +52,45 @@ body{
   font-weight: bold;
 }
 
+
+#next{
+  width: 200px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10%;
+  margin-left: 40%;
+}
+
+#next:hover{
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #4d0de5;
+  color: #ffffff;
+}
+
+#back{
+  width: 200px;
+  height: 80px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10%;
+  margin-left: 40%;
+}
+
+#back:hover{
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #4d0de5;
+  color: #ffffff;
+}
+
 #search button:hover{
   cursor: pointer;
   border: 1px solid #ffffff;

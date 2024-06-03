@@ -27,7 +27,8 @@
 </header>
 
 <body>
-<div class="container2">
+<!-- Scrapped idea that never worked -->
+<!-- <div class="container2"> 
     <header>
         <h1>Weather Location Searcher</h1>
     </header>
@@ -46,11 +47,20 @@
             <button class="attach-files">Attach Files</button>
         </div>
    
+
+</div>-->
+    <div class="address">You live here: <div id="address">*search location*</div></div>
+=======
 </div>
 
 <input id="search" type="text" size="50"/>
+
     <div id="map"></div>
+    <br></br>
     <button id="locationButton" type="button"></button>
+
+    <a href="index.html"><button id="nextButton" type="button" disabled>Next</button></a>
+=======
 
     <!-- -d ' {
         "includedTypes": ["restaurant"],
@@ -68,6 +78,7 @@
       -H "X-Goog-FieldMask: places.displayName" \
       https://places.googleapis.com/v1/places:searchNearby -->
     
+
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAks66r63NKJQCXN-ElReI33CP-EARiaTY&loading=async&libraries=places&callback=initMap"></script>
 </main>
 </body>
