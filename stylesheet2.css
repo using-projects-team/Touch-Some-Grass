@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    padding: 20px;
+    text-align: center;
+}
+
+#go {       
+  width: 100px;  
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 10px;
+  font-size: 20x;
+  font-weight: bold;
+  margin-bottom: 10%;
+}
+
+#go:hover {       
+  cursor: pointer;
+  border: 1px solid #ffffff;
+  border-radius: 10px;
+  background-color: #4d0de5;
+  color: #ffffff;
+}
+
+#back {       
+    width: 100px;  
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20x;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  
+  #back:hover {       
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #4d0de5;
+    color: #ffffff;
+  }
+
+  #save {       
+    width: 100px;  
+    height: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 20x;
+    font-weight: bold;
+    margin-bottom: 10%;
+  }
+  
+  #save:hover {       
+    cursor: pointer;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    background-color: #4d0de5;
+    color: #ffffff;
+  }
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+header h2 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+#opt {
+    margin-top: 10px;
+    margin-bottom: 100px;
+    margin-left: 110px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+/* .search-form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-form input {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: calc(100% - 90px);
+}
+
+.search-form button {
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    width: 80px;
+}
+
+.search-form button:hover {
+    background-color: #0056b3;
+} */
+
+.map {
+    height: 300px;
+    width: 100%;
+    margin: 20px 0;
+}

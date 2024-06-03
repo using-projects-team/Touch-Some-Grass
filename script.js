@@ -23,6 +23,7 @@ function initMap() {
               geoposition.geocode({'location': coordinates}, function(data, status) {
                 if (status === 'OK') {
                   if (data[0]) {
+                    console.log(data);
                     document.getElementById("address").textContent = data[0].formatted_address;
                     document.getElementById("nextButton").removeAttribute("disabled");
                     document.getElementById("nextButton").classList.toggle("active");

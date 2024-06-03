@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Places</title>
+    <link rel="stylesheet" href="stylesheet2.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nearby Places</h1>
+            <h2>Select one</h2>
+        </header>
+        <main>
+            <!-- <form id="location-form" class="search-form">
+                <input type="text" placeholder="Enter location" id="location-input" required>
+                <button type="submit">Preview</button>
+            </form> -->
+            <!-- <div id="map" class="map"></div> -->
+            <select name="options" id="opt">
+                <option value="park">Park</option>
+                <option value="amusement_park">Amusement Park</option>
+                <option value="campground">Campground</option>
+                <option value="tourist_attraction">Tourist Attraction</option>
+                <option value="gym">Gym</option>
+            </select>
+            <button id="sel">Confirm</button>
+            <button id="ch">Change selection</button>
+            <div class="info">Current selection:<div id="info">selection here</div></div>
+            <a href="https://www.google.com/maps?z=5&t=m"><button id="go">Go!</button></a>
+            <a href="main.html"><button id="back">Return</button></a>
+            <button id="save">Save for later</button>
+        </main>
+    </div>
+    <script src="./script2.js"></script>
+</body>
+</html>
