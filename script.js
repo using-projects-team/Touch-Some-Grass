@@ -78,9 +78,8 @@ function initMap() {
     });
 }
 
-=======
-var map, infoWindow;
-var autocomplete;
+
+
 var position = {};
 var service
 
@@ -236,7 +235,5 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
 
 window.initMap = initMap;
 
-=======
 
-window.initMap = initMap;
 
