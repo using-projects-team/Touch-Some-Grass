@@ -123,28 +123,12 @@ body {
   color: #ffffff;
 }
 
-#nextButton {
-  width: 200px;
-  height: 80px;
-  border: 5px solid cyan;
-  border-radius: 10px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 10%;
-  margin-left: 43%;
-}
-
-.inactive {
- 
-}
-
-.active {
-  width: 200px;
-  height: 80px;
-  border: 5px solid cyan;
-  color: cyan;
-  background-color: magenta;
-
+.next {
+  width: 150px;
+  height: 50px;
+  border: 5px solid rgb(34, 172, 34);
+  color: rgb(31, 189, 31);
+  background-color: rgb(188, 89, 218);
   border-radius: 10px;
   font-size: 30px;
   font-weight: bold;
@@ -152,8 +136,7 @@ body {
   margin-left: 80%;
 }
 
-.active:hover {
-
+.next:hover {
   cursor: pointer;
   border: 5px solid #ffffff;
   border-radius: 10px;
