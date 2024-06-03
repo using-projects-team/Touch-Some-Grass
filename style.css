@@ -1,3 +1,5 @@
+
+
 head {
     text-align: center;
     text-wrap: wrap;
@@ -7,31 +9,19 @@ head {
 header {
     display: absolute; 
 }
-.address {
-  margin-left: 10%;
-  font-size: 40px;
-  font-family:'Times New Roman', Times, serif;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color:rgb(10, 228, 228);
-}
-
-#address {
-  display: inline;
-}
 
 .container {
+    height: 200px;
     position: relative;
     text-align: center;
-    color: white;
-
     border-color: rgb(34, 172, 34);
-    border-width: 50%;
     border-style: solid;
-    max-height: 2%;
-    width: 1343px;
-    height: 200px;
-    margin-bottom: 4%;
+    border-color: rgb(31, 189, 31);
+    border-width: 5px;
+    color: white;
+    font-size: 20px;
+    background-color: #007BFF;
+ 
   }
  
   .bottom-left {
@@ -59,7 +49,6 @@ header {
     position: absolute;
     bottom: 8px;
     right: 16px;
-
   }
 
 .banner {
@@ -76,30 +65,36 @@ header {
     position: absolute;
     top: 30%;
     left: 40%;
-    transform: translate(-50%, -50%);
-    background: none;
+    transform: translate(-30%, -10%);
+    border-style: solid;
+    background: azure;
     color: rgb(182, 44, 182);
     font-size: 80px;
     font-family: Georgia, 'Times New Roman', Times, serif;
   }
 
+  .background {
+    background-color: #007BFF;
+  }
+
 body {
     font-family: Arial, sans-serif;
-    background-color:rgb(182, 44, 182);
     margin: 0;
     display: relative;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
+
 /*.container2 {
+  display: none;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 350px;
     padding: 20px;
     text-align: center;
-}*/
+}
 header h1 {
     margin: 0;
     font-size: 1.5em;
@@ -171,29 +166,36 @@ header h1 {
     background-color: #218838;
 }*/
 
-#map {
-    display: inline-block;
-    height: 50%;
-    width: 50%;
-    margin-top: 5%;
-    margin-left: 25%;
-    border-color: rgb(34, 172, 34);
-    border-width: 10px;
-    border-style: double;
+.bar {
+  display: absolute;
+  margin-left: 20%;
+  top: 5%;
+  left: 50%;
+  transform: (10%, 70%);
+  cursor: pointer;
 }
 
+
+#map {
+  display: absolute;
+  top: 1000px;
+  left: 300px;
+  transform: translate(150%, 10%);
+}
+
+
 #locationButton {
-  width: 200px;
-  height: 80px;
-  background-color: magenta;
-  border: 5px solid cyan;
-  color: cyan;
+  width: 300px;
+  height: 50px;
+  background-color: rgb(31, 189, 31);
+  border: 5px solid black;
+  color: rgb(103, 45, 126);
   border-radius: 10px;
   font-size: 20px;
   font-weight: bold;
-  margin-top: 5%;
+  margin-top: 8%;
   margin-bottom: 8%;
-  margin-left: 43%;
+  margin-left: 12%;
 }
 
 #locationButton:enabled:hover {
@@ -204,20 +206,20 @@ header h1 {
   color: #ffffff;
 }
 
-#nextButton {
-  width: 200px;
-  height: 80px;
-  border: 5px solid cyan;
-  color: cyan;
-  background-color: magenta;
+.next {
+  width: 150px;
+  height: 50px;
+  border: 5px solid rgb(34, 172, 34);
+  color: rgb(31, 189, 31);
+  background-color: rgb(188, 89, 218);
   border-radius: 10px;
   font-size: 30px;
   font-weight: bold;
-  margin-bottom: 10%;
-  margin-left: 43%;
+  margin-bottom: 1%;
+  margin-left: 80%;
 }
 
-#nextButton:hover {
+.next:hover {
   cursor: pointer;
   border: 5px solid #ffffff;
   border-radius: 10px;
@@ -226,27 +228,23 @@ header h1 {
 }
   .footer {
     display: absolute;
-    bottom: 0; 
-    left: 0;
-    z-index: 10;
-    border-style: double;
-    border-color: aqua;
-    border-width: 10px;
-    width: 98.5%;
+    border-style: dashed;
+    width: 100%;
+    background-color: gray;
   }
 
   .list {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    color: cyan;
+    color: rgb(103, 45, 126);
     font-style: italic;
     text-decoration: none;
   }
 
   h2 {
     margin-left: 40%;
-    color: cyan;
+    color: rgb(31, 189, 31);
     font-style: italic;
     text-decoration: none;
   }
